@@ -57,15 +57,23 @@
 
 
 
-<meta name="description" content="Walk steps steps by step">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ZBK1nger’s blog">
-<meta property="og:url" content="https://github.com/ZBK1nger/index.html">
+<meta name="description" content="TimeMachine是个好东西，也许你有好多重要的东西需要备份，或许公司给你配备了一台高大上的Mac Pro,需要资料转移，也许电脑意外丢失，需要数据恢复，TimeMachine的备份总能给我们意想不到的帮助。
+刚买的移动硬盘大部分都是NTFS格式的，比如我的希捷1TB移动硬盘，首先NTFS格式在Mac上是可读不可写的，所以我们需要下载辅助类的插件来进行文件的操作，我用的就是Tuxera NTF">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mac下移动硬盘的分区及TimeMachine的备份">
+<meta property="og:url" content="https://github.com/ZBK1nger/2016/03/23/Mac下移动硬盘的分区及TimeMachine的备份/index.html">
 <meta property="og:site_name" content="ZBK1nger’s blog">
-<meta property="og:description" content="Walk steps steps by step">
+<meta property="og:description" content="TimeMachine是个好东西，也许你有好多重要的东西需要备份，或许公司给你配备了一台高大上的Mac Pro,需要资料转移，也许电脑意外丢失，需要数据恢复，TimeMachine的备份总能给我们意想不到的帮助。
+刚买的移动硬盘大部分都是NTFS格式的，比如我的希捷1TB移动硬盘，首先NTFS格式在Mac上是可读不可写的，所以我们需要下载辅助类的插件来进行文件的操作，我用的就是Tuxera NTF">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1396824-7a020206285284c4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1396824-6f081ec09541b7a7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1396824-e9a6e42d6e851292.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2016-03-23T02:26:36.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ZBK1nger’s blog">
-<meta name="twitter:description" content="Walk steps steps by step">
+<meta name="twitter:title" content="Mac下移动硬盘的分区及TimeMachine的备份">
+<meta name="twitter:description" content="TimeMachine是个好东西，也许你有好多重要的东西需要备份，或许公司给你配备了一台高大上的Mac Pro,需要资料转移，也许电脑意外丢失，需要数据恢复，TimeMachine的备份总能给我们意想不到的帮助。
+刚买的移动硬盘大部分都是NTFS格式的，比如我的希捷1TB移动硬盘，首先NTFS格式在Mac上是可读不可写的，所以我们需要下载辅助类的插件来进行文件的操作，我用的就是Tuxera NTF">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1396824-7a020206285284c4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -83,7 +91,7 @@
   };
 </script>
 
-  <title> ZBK1nger’s blog </title>
+  <title> Mac下移动硬盘的分区及TimeMachine的备份 | ZBK1nger’s blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -104,9 +112,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -193,9 +199,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -215,10 +221,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2016/03/23/Mac下移动硬盘的分区及TimeMachine的备份/" itemprop="url">
-                  Mac下移动硬盘的分区及TimeMachine的备份
-                </a>
+                Mac下移动硬盘的分区及TimeMachine的备份
               
             
           </h1>
@@ -257,9 +260,7 @@
       
 
       
-        
-          
-            <p>TimeMachine是个好东西，也许你有好多重要的东西需要备份，或许公司给你配备了一台高大上的Mac Pro,需要资料转移，也许电脑意外丢失，需要数据恢复，TimeMachine的备份总能给我们意想不到的帮助。</p>
+        <p>TimeMachine是个好东西，也许你有好多重要的东西需要备份，或许公司给你配备了一台高大上的Mac Pro,需要资料转移，也许电脑意外丢失，需要数据恢复，TimeMachine的备份总能给我们意想不到的帮助。</p>
 <p>刚买的移动硬盘大部分都是NTFS格式的，比如我的希捷1TB移动硬盘，首先NTFS格式在Mac上是可读不可写的，所以我们需要下载辅助类的插件来进行文件的操作，我用的就是<a href="http://www.tuxera.com/products/tuxera-ntfs-for-mac/download/" target="_blank" rel="external">Tuxera NTFS</a>来实现的，你也可以自行谷歌，工具还是蛮多的。</p>
 <p>首先问题是这样子的，1TB的移动硬盘现在为NTFS格式，而我需要TimeMachine来对我的电脑进行备份，Time Machine 备份磁盘最常见的格式是“Mac OS 扩展”格式，但Time Machine还支持“Mac OS 扩展（区分大小写，日志式）”和XSan格式。所以首先我们要做的是：</p>
 <p>1.将移动硬盘里面所存储的内容转移到其他硬盘中，比如Windows的D盘F盘，也可以转移到其他的移动硬盘中，具体迁移到哪里，根据你数据的大小选择最恰当的存储地方。</p>
@@ -271,12 +272,12 @@
 <p>TimeMachine备份: 很简单，打开系统偏好设置，点击TimeMachine，选择那个你刚刚分区成功容量为300GB格式为MAC OS X的硬盘，经过蛮久的等待，就备份成功喽，很容易操作以及理解，Apple的支持文档也做了详细的步骤解释 <a href="https://support.apple.com/zh-cn/HT201250" target="_blank" rel="external">Apple支持</a><br><img src="http://upload-images.jianshu.io/upload_images/1396824-e9a6e42d6e851292.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="屏幕快照 2016-02-28 下午1.23.01.png"></p>
 <p>到这里，TimeMachine的备份以及我们移动硬盘的分区就全部搞定了，yeah~</p>
 
-          
-        
       
     </div>
 
     <div>
+      
+        
       
     </div>
 
@@ -287,16 +288,15 @@
 
       
       
-        <div class="post-eof"></div>
-      
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -304,6 +304,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -323,8 +327,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -362,6 +375,23 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
       
 
     </div>
@@ -446,6 +476,167 @@
   
 
   
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
 
   
 
