@@ -4,17 +4,27 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>冷丶子栀</title>
+  <title>iOS基于代码按比例约束方法进行屏幕适配 | 冷丶子栀</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Walk steps steps by step">
-<meta property="og:type" content="website">
-<meta property="og:title" content="冷丶子栀">
-<meta property="og:url" content="https://github.com/ZBK1nger/index.html">
+  <meta name="description" content="还记得刚刚开始学习iOS的开发的时候，简简单单的小控件练习，我总是习惯性的写死Frame，后来知道了屏幕适配，添加约束这样才能使UI更好的展示在屏幕上，Objective-C中的Masonry，Swift中的SnapKit，以及Xib和Storyboard的AutoLayout加上SizeClasses的组合，都极大程度上的帮助我们做屏幕的适配约束。
+推荐一下很精彩的博客 — 很详解并表达自己观点">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS基于代码按比例约束方法进行屏幕适配">
+<meta property="og:url" content="https://github.com/ZBK1nger/2016/06/30/iOS基于代码按比例约束方法进行屏幕适配/index.html">
 <meta property="og:site_name" content="冷丶子栀">
-<meta property="og:description" content="Walk steps steps by step">
+<meta property="og:description" content="还记得刚刚开始学习iOS的开发的时候，简简单单的小控件练习，我总是习惯性的写死Frame，后来知道了屏幕适配，添加约束这样才能使UI更好的展示在屏幕上，Objective-C中的Masonry，Swift中的SnapKit，以及Xib和Storyboard的AutoLayout加上SizeClasses的组合，都极大程度上的帮助我们做屏幕的适配约束。
+推荐一下很精彩的博客 — 很详解并表达自己观点">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1396824-55526fe4317b66c7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1396824-b0e6e9dddbac943b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1396824-2d8e8fe82a3c4435.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1396824-87c40c46d130a533.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1396824-30afc4fbda4448e4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2016-06-30T00:44:35.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="冷丶子栀">
-<meta name="twitter:description" content="Walk steps steps by step">
+<meta name="twitter:title" content="iOS基于代码按比例约束方法进行屏幕适配">
+<meta name="twitter:description" content="还记得刚刚开始学习iOS的开发的时候，简简单单的小控件练习，我总是习惯性的写死Frame，后来知道了屏幕适配，添加约束这样才能使UI更好的展示在屏幕上，Objective-C中的Masonry，Swift中的SnapKit，以及Xib和Storyboard的AutoLayout加上SizeClasses的组合，都极大程度上的帮助我们做屏幕的适配约束。
+推荐一下很精彩的博客 — 很详解并表达自己观点">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1396824-55526fe4317b66c7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
   
     <link rel="alternative" href="/atom.xml" title="冷丶子栀" type="application/atom+xml">
   
@@ -182,9 +192,7 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
-  
-    <article id="post-iOS基于代码按比例约束方法进行屏幕适配" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-iOS基于代码按比例约束方法进行屏幕适配" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2016/06/30/iOS基于代码按比例约束方法进行屏幕适配/" class="article-date">
@@ -200,12 +208,19 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/30/iOS基于代码按比例约束方法进行屏幕适配/">iOS基于代码按比例约束方法进行屏幕适配</a>
+    <h1 class="article-title" itemprop="name">
+      iOS基于代码按比例约束方法进行屏幕适配
     </h1>
   
 
       </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        <div class="clearfix"></div>
+      </div>
       
     
     <div class="article-entry" itemprop="articleBody">
@@ -256,171 +271,68 @@
       
     </div>
     
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/03/29/“Swift函数的常见使用方法”/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Swift函数的常见使用方法</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
   
 </article>
 
 
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
 
 
 
 
 
 
-
-  
-    <article id="post-“Swift函数的常见使用方法”" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/29/“Swift函数的常见使用方法”/" class="article-date">
-  	<time datetime="2016-03-29T07:01:37.000Z" itemprop="datePublished">2016-03-29</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/29/“Swift函数的常见使用方法”/">Swift函数的常见使用方法</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>最近开始学习Swift语言，不得不说Apple的这门语言真的博大精深而又清爽简洁，对于刚刚接触编程不久的我而言，习惯了C语言和OC语言的.h.m模式一下切换到这种.Swift的模式下着实是个挑战，如果您接触过ruby或者python这种脚本语言，肯定会很快上手并且运用到项目中去,最近看到Swift的函数部分，记录下来不同的方式用法，漫漫的学习之旅~</p>
-<p>#Swift中的函数</p>
-<ul>
-<li>我们可以使用func来声明函数，使用函数名称和参数来调用函数，使用 -&gt; 来表示函数的返回值类型，一个简单的函数实现如下：</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">func getSumOfNumbers(appleNumber:Int,orangeNumber:Int,pearNumber:Int) -&gt;Int&#123;</span><br><span class="line">    return appleNumber + orangeNumber + pearNumber</span><br><span class="line">&#125;</span><br><span class="line">//getSumOfNumbers(appleNumber: Int orangeNumber:Int, pearNumber: Int)</span><br><span class="line">print(getSumOfNumbers(3, orangeNumber: 6, pearNumber: 9))</span><br></pre></td></tr></table></figure>
-<p>得到输出结果18</p>
-<ul>
-<li>函数可以带有可变个数的参数，这些参数在数组内表现为数组的形式</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">func sumOf(numbers: Int...) -&gt; Int &#123;</span><br><span class="line">    var sum = 0</span><br><span class="line">    for number in numbers &#123;</span><br><span class="line">        sum += number</span><br><span class="line">    &#125;</span><br><span class="line">    return sum</span><br><span class="line">&#125;</span><br><span class="line">sumOf()</span><br><span class="line">print(sumOf(3,6,9))</span><br></pre></td></tr></table></figure>
-<p>得到输出结果18</p>
-<ul>
-<li>函数可以嵌套使用，可以使用函数的嵌套来实现复杂或者庞大的函数结构，被嵌套的函数可以访问外部的变量</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">func sumOf() -&gt;Int&#123;</span><br><span class="line">    var firstNumber = 3</span><br><span class="line">    var secondNumber = 6</span><br><span class="line">    var thirdNumber = 9</span><br><span class="line">    var sum = 0</span><br><span class="line">    func add()&#123;</span><br><span class="line">    sum = firstNumber + secondNumber + thirdNumber</span><br><span class="line">    &#125;</span><br><span class="line">    add()</span><br><span class="line">    return sum</span><br><span class="line">&#125;</span><br><span class="line">print(sumOf())</span><br></pre></td></tr></table></figure>
-<p>得到输出结果18</p>
-<ul>
-<li>函数当做另一个函数的返回值,返回值类型为函数</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">func sumOf() -&gt; (Int -&gt; Int) &#123;</span><br><span class="line">    var firstNumber = 3</span><br><span class="line">    var secondNumber = 6</span><br><span class="line">    func addOne(number: Int) -&gt; Int &#123;</span><br><span class="line">        return firstNumber + secondNumber + number</span><br><span class="line">    &#125;</span><br><span class="line">    return addOne</span><br><span class="line">&#125;</span><br><span class="line">var increment = sumOf()</span><br><span class="line">var sum = increment(9)</span><br><span class="line">print(sum)</span><br></pre></td></tr></table></figure>
-<p>得到输出结果18</p>
-<ul>
-<li>函数当做参数来传入一个函数里</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">func hasAnyMatches(list: [Int], condition: Int -&gt; Bool) -&gt; Bool &#123;</span><br><span class="line">    for item in list &#123;</span><br><span class="line">        if condition(item) &#123;</span><br><span class="line">            return true</span><br><span class="line">                   &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return false</span><br><span class="line">&#125;</span><br><span class="line">func lessThanTen(number: Int) -&gt; Bool &#123;</span><br><span class="line">    return number &lt; 10</span><br><span class="line">&#125;</span><br><span class="line">var numbers = [20, 19, 13, 12]</span><br><span class="line"> print(hasAnyMatches(numbers, condition: lessThanTen))</span><br></pre></td></tr></table></figure>
-<p>由于 condition这个函数传的参数为lessThanTen这个函数,numbers为传进去的数组遍历数组list中的元素没有发现满足number&lt;10的item，所以输出结果为false。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="iOS基于代码按比例约束方法进行屏幕适配" data-title="iOS基于代码按比例约束方法进行屏幕适配" data-url="https://github.com/ZBK1nger/2016/06/30/iOS基于代码按比例约束方法进行屏幕适配/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
 
 
 
 
-
-
-
-
-
-  
-    <article id="post-Mac下移动硬盘的分区及TimeMachine的备份" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/23/Mac下移动硬盘的分区及TimeMachine的备份/" class="article-date">
-  	<time datetime="2016-03-23T02:21:22.000Z" itemprop="datePublished">2016-03-23</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/23/Mac下移动硬盘的分区及TimeMachine的备份/">Mac下移动硬盘的分区及TimeMachine的备份</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>TimeMachine是个好东西，也许你有好多重要的东西需要备份，或许公司给你配备了一台高大上的Mac Pro,需要资料转移，也许电脑意外丢失，需要数据恢复，TimeMachine的备份总能给我们意想不到的帮助。</p>
-<p>刚买的移动硬盘大部分都是NTFS格式的，比如我的希捷1TB移动硬盘，首先NTFS格式在Mac上是可读不可写的，所以我们需要下载辅助类的插件来进行文件的操作，我用的就是<a href="http://www.tuxera.com/products/tuxera-ntfs-for-mac/download/" target="_blank" rel="external">Tuxera NTFS</a>来实现的，你也可以自行谷歌，工具还是蛮多的。</p>
-<p>首先问题是这样子的，1TB的移动硬盘现在为NTFS格式，而我需要TimeMachine来对我的电脑进行备份，Time Machine 备份磁盘最常见的格式是“Mac OS 扩展”格式，但Time Machine还支持“Mac OS 扩展（区分大小写，日志式）”和XSan格式。所以首先我们要做的是：</p>
-<p>1.将移动硬盘里面所存储的内容转移到其他硬盘中，比如Windows的D盘F盘，也可以转移到其他的移动硬盘中，具体迁移到哪里，根据你数据的大小选择最恰当的存储地方。</p>
-<p>2.将移动硬盘抹掉，变成Mac OS X 格式。首先打开commmand+空格打开你的Spotlight，搜索disk Utility.app,也就是苹果的磁盘工具，我这里以xiaomi这个磁盘作为演示。点击抹掉，这样你的硬盘则被格式化为MAC OS X 格式了。<br><img src="http://upload-images.jianshu.io/upload_images/1396824-7a020206285284c4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="屏幕快照 2016-02-28 下午1.04.59.png"></p>
-<p>再来说说分区的建议，1TB的移动硬盘我建议分成两个区，300GB的MAC OS X格式作为经常使用Mac的你作为TimeMacine备份使用，700GB的另一个分区NTFS格式的作为你穿插在windows和Mac之间存储一些照片或者影音文件之类的，大部分情况下很够用，根据你硬盘的大小选择最适当的分区数以及大小。</p>
-<p>分区：左侧点击你的移动硬盘，上面有急救，分区抹掉等等选项，点击分区，划分大小，因为在MAC系统下不能直接格式化为NTFS格式的，我们将300GB的格式化为MAC OS X 格式，然后将700GB的分区格式化为ExFat格式，如果你想要知道不同的格式之间有什么不同，谷歌一下，会得到你想要的一切。<br><img src="http://upload-images.jianshu.io/upload_images/1396824-6f081ec09541b7a7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="屏幕快照 2016-02-28 下午1.11.54.png"></p>
-<p>上述操作做完之后，效果会是每次当你的移动硬盘连接到你的电脑时，会为两部分，300GB以及700GB，且为MAC OS X格式，以及ExFat格式，现在我们只需要将移动硬盘连接到一台Windows电脑上，将ExFat这个硬盘格式化为NTFS格式就好了。现在你要做的只不过花费一些时间把刚刚拷贝过去的你的资料转移回来就可以了。</p>
-<p>现在我们就拥有了两个分区的移动硬盘，可以应付不同的操作系统，进行所需要的操作。</p>
-<p>TimeMachine备份: 很简单，打开系统偏好设置，点击TimeMachine，选择那个你刚刚分区成功容量为300GB格式为MAC OS X的硬盘，经过蛮久的等待，就备份成功喽，很容易操作以及理解，Apple的支持文档也做了详细的步骤解释 <a href="https://support.apple.com/zh-cn/HT201250" target="_blank" rel="external">Apple支持</a><br><img src="http://upload-images.jianshu.io/upload_images/1396824-e9a6e42d6e851292.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="屏幕快照 2016-02-28 下午1.23.01.png"></p>
-<p>到这里，TimeMachine的备份以及我们移动硬盘的分区就全部搞定了，yeah~</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-  
 </div>
       <footer id="footer">
   <div class="outer">
@@ -444,8 +356,8 @@
 		fancybox: true,
 		mathjax: true,
 		animate: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
