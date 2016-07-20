@@ -213,46 +213,11 @@
         <p>还记得刚刚开始学习iOS的开发的时候，简简单单的小控件练习，我总是习惯性的写死Frame，后来知道了屏幕适配，添加约束这样才能使UI更好的展示在屏幕上，Objective-C中的Masonry，Swift中的SnapKit，以及Xib和Storyboard的AutoLayout加上SizeClasses的组合，都极大程度上的帮助我们做屏幕的适配约束。</p>
 <p>推荐一下很精彩的博客 — 很详解并表达自己观点非常棒的博客。</p>
 <ul>
-<li><p><a href="http://adad184.com/2014/09/28/use-masonry-to-quick-solve-autolayout/" target="_blank" rel="external">Masonry介绍与使用实践(快速上手Autolayout)</a></p>
+<li><p><a href="http://adad184.com/2014/09/28/use-masonry-to-quick-solve-autolayout/">Masonry介绍与使用实践(快速上手Autolayout)</a></p>
 </li>
-<li><p><a href="http://www.jianshu.com/p/bd67a4869b4d" target="_blank" rel="external">Snapkit的启示录</a></p>
-</li>
-</ul>
-<p>今天突然间就有了个想法，那么我是否可以基于一种屏幕的尺寸，通过写死Frame然后通过某些捷径的方法进行屏幕的比例约束适配呢？</p>
-<ul>
-<li>1 首先这种方法不适合ipad开发，只适用于手机（4 5 6 系列）</li>
-<li>2 这种方法并不推荐，因为现在有很多流行合理的适配方法，但是嘛，做开发，有时候可以自己嗨一下嘛，做出来也是好样的</li>
-<li>3 只是非常简单的按比例兼容。只要每张图都有@1x，@2x，@3x的话，该方法完全不会让图片模糊或者变形，能还原出设计师的最初稿</li>
-<li>4 由于iphone不同系列屏幕宽高比都是相差无几的，所以按照比例约束适配的方法绝对是可行的</li>
-</ul>
-<p>首先，我们可以以iphone5（320 * 568）为最初设计机型，然后以iphone5系列为模板，进行比例的放大或者缩小。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//获取device的屏幕宽高</span><br><span class="line">#define MainScreenWidth  [[UIScreen mainScreen]bounds].size.width</span><br><span class="line">#define MainScreenHeight  [[UIScreen mainScreen]bounds].size.height</span><br><span class="line"></span><br><span class="line">    //以iphone5，5s，5c为基本机型，其他型号机器按比例系数做乘法.</span><br><span class="line">    AppDelegate  *appdelegate = [UIApplication sharedApplication].delegate;</span><br><span class="line">    appdelegate.autoSizeScaleX = MainScreenWidth/320.f;</span><br><span class="line">    appdelegate.autoSizeScaleY = MainScreenWidth/568.f;</span><br></pre></td></tr></table></figure>
-<p>我们获得了屏幕的宽高的比例系数之后，在创建我们一些控件的时候，就可以进行按比例适配了</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">AppDelegate *apd = [UIApplication sharedApplication].delegate;</span><br><span class="line">    UIButton *loginBtn = [[UIButton alloc]initWithFrame:CGRectMake(10*apd.autoSizeScaleX, 20*apd.autoSizeScaleY, (320-10*2)*apd.autoSizeScaleX, 44*apd.autoSizeScaleY)];</span><br><span class="line">    [loginBtn setTitle:@&quot;login&quot; forState:UIControlStateNormal];</span><br><span class="line">    [loginBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];</span><br><span class="line">    [loginBtn.titleLabel setFont:[UIFont systemFontOfSize:14]];</span><br><span class="line">    [loginBtn setBackgroundColor:[UIColor cyanColor]];</span><br><span class="line">    [self.view addSubview:loginBtn];</span><br></pre></td></tr></table></figure>
-<ul>
-<li>这样就有个问题，那么每个View上的控件，我们都需要重新设置下frame，这样的代码量以及维护都特别艰难，我们可以考虑封装下，来进行整个项目的适配~~</li>
-</ul>
-<p>首先我们创建一个工具类来进行比例约束适配方法的封装</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1396824-55526fe4317b66c7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="屏幕快照 2016-06-29 下午5.40.50.png"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1396824-b0e6e9dddbac943b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="屏幕快照 2016-06-29 下午5.41.03.png"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1396824-2d8e8fe82a3c4435.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="屏幕快照 2016-06-29 下午5.41.16.png"></p>
-<p>图上很清楚的说明，首先工具类AutoFillScreenutils调用类方将需要进行按比例约束的view当做参数传递进来，通过遍历的方式来重新设置一遍Frame，如果你的view层级很高的话，可以多进行几遍遍历。</p>
-<ul>
-<li><p>(void)autoLayoutFillScreen:(UIView *)view</p>
-</li>
-<li><p>(CGRect)updateViewsFrame:(CGFloat) x withY:(CGFloat) y AndWidth:(CGFloat) width AndHeight:(CGFloat) height</p>
+<li><p><a href="http://www.jianshu.com/p/bd67a4869b4d">Snapkit的启示录</a></p>
 </li>
 </ul>
-<p>然后在ViewController中，将View当做参数传递过去即可。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">- (void)viewDidLoad &#123;</span><br><span class="line">    [super viewDidLoad];</span><br><span class="line">    self.view.backgroundColor = [UIColor lightGrayColor];</span><br><span class="line">    [self setUpViews];</span><br><span class="line">    [AtuoFillScreenUtils autoLayoutFillScreen:self.view];</span><br><span class="line"></span><br><span class="line">    // Do any additional setup after loading the view, typically from a nib.</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>我们通过测试就可以发现，原来在iphone5系列上布局正常的图，到iphone6及iphone6+上就变形了，通过我们的按比例约束，又重新适配了，不得不说这样还是蛮简单的。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1396824-87c40c46d130a533.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1396824-30afc4fbda4448e4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"></p>
-<p>Demo已经上传到Github，有兴趣的可以看一下,很简单一个小东西，也是不断学习过程中的一个小经验，不喜勿喷，谢谢啦~</p>
-<ul>
-<li><a href="https://github.com/ZBK1nger/LayoutWithScale">Github</a> (LayoutWithScale)</li>
-</ul>
-
       
     </div>
     
@@ -261,6 +226,10 @@
       
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/06/30/iOS基于代码按比例约束方法进行屏幕适配/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
