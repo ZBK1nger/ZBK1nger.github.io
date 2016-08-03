@@ -114,7 +114,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/Swift/" style="font-size: 10px;">Swift</a> <a href="/tags/iOS/" style="font-size: 20px;">iOS</a> <a href="/tags/奇淫技巧/" style="font-size: 20px;">奇淫技巧</a> <a href="/tags/感悟/" style="font-size: 10px;">感悟</a> <a href="/tags/适配/" style="font-size: 10px;">适配</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a> <a href="/tags/黑魔法/" style="font-size: 10px;">黑魔法</a>
+						<a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/Swift/" style="font-size: 10px;">Swift</a> <a href="/tags/iOS/" style="font-size: 20px;">iOS</a> <a href="/tags/iOS-黑魔法/" style="font-size: 10px;">iOS 黑魔法</a> <a href="/tags/奇淫技巧/" style="font-size: 20px;">奇淫技巧</a> <a href="/tags/感悟/" style="font-size: 10px;">感悟</a> <a href="/tags/适配/" style="font-size: 10px;">适配</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a> <a href="/tags/黑魔法/" style="font-size: 10px;">黑魔法</a>
 					</div>
 				</section>
 				
@@ -187,6 +187,73 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-基于AFNetWorking3-1的封装" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/08/03/基于AFNetWorking3-1的封装/" class="article-date">
+  	<time datetime="2016-08-03T00:59:58.000Z" itemprop="datePublished">2016-08-03</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/03/基于AFNetWorking3-1的封装/">基于AFNetWorking3.1的封装</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>整体思路简单明了，基于AFNetWorking3.1的封装，Get、Post、Put、Delete网络请求方式的数据获取，文件的下载，视频的上传下载，单图多图上传，网络监测。</p>
+<p>参照<a href="https://github.com/boai/BANetManager">BANetWorkManager</a>的封装方式进行小小修改，为便于以后自己项目的使用。</p>
+<ul>
+<li>1 建立工程 ZBNetWork</li>
+<li>2 cd Desktop/Git/ZBNetWork/</li>
+<li>3 vim Podfile cocoaPods导入AFNetWorking(pod ‘AFNetworking’, ‘~&gt; 3.1’)</li>
+<li>4 在info.plist文件中双击 -&gt; Open As -&gt; SourceCode添加以下代码（在iOS 9中 苹果将原http协议改成了https协议 使用 TLS1.2 SSL加密请求数据，所以我们不能直接请求http协议下的数据了）</li>
+</ul>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS-黑魔法/">iOS 黑魔法</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/08/03/基于AFNetWorking3-1的封装/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-黑魔法-常用的宏定义大全" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -437,67 +504,10 @@
 
 
   
-    <article id="post-Mac下移动硬盘的分区及TimeMachine的备份" class="article article-type-post" itemscope itemprop="blogPost">
   
-    <div class="article-meta">
-      <a href="/2016/03/23/Mac下移动硬盘的分区及TimeMachine的备份/" class="article-date">
-  	<time datetime="2016-03-23T02:21:22.000Z" itemprop="datePublished">2016-03-23</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/23/Mac下移动硬盘的分区及TimeMachine的备份/">Mac下移动硬盘的分区及TimeMachine的备份</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>TimeMachine是个好东西，也许你有好多重要的东西需要备份，或许公司给你配备了一台高大上的Mac Pro,需要资料转移，也许电脑意外丢失，需要数据恢复，TimeMachine的备份总能给我们意想不到的帮助。</p>
-<p>刚买的移动硬盘大部分都是NTFS格式的，比如我的希捷1TB移动硬盘，首先NTFS格式在Mac上是可读不可写的，所以我们需要下载辅助类的插件来进行文件的操作，我用的就是<a href="http://www.tuxera.com/products/tuxera-ntfs-for-mac/download/">Tuxera NTFS</a>来实现的，你也可以自行谷歌，工具还是蛮多的。</p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac/">Mac</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/奇淫技巧/">奇淫技巧</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/03/23/Mac下移动硬盘的分区及TimeMachine的备份/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 </div>
       <footer id="footer">
