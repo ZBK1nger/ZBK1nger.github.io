@@ -20,7 +20,8 @@
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1396824-8b6f3cec9738bb06.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1396824-ae71756aa9d944df.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1396824-51c3439305130a1b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2016-08-05T02:31:40.000Z">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1396824-ebaeb6cc28dee5ab.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2016-08-05T04:01:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GithubPages+Hexo博客主题Yilia">
 <meta name="twitter:description" content="半年前，我开始捣鼓自己的博客，简书是一个不错的写作平台，在这里我读到了很多优秀的文章，学习到了很多新鲜的知识，无论是技术方面还是生活感悟、工作技巧、奇闻异事，我很喜欢在这里看文章的那种感觉，但是我觉得作为一个Developer，有一个自己的博客，写下自己的经验，写下自己的生活必不可少，积累是一个人一生最宝贵的财富。
@@ -269,7 +270,11 @@
 <p>我们可以这样解决，打开一篇文章<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">open 黑魔法-常用的宏定义 大全.md -a&quot;MacDown&quot;</span><br></pre></td></tr></table></figure></p>
 <p><img src="http://upload-images.jianshu.io/upload_images/1396824-ae71756aa9d944df.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="屏幕快照 2016-08-03 下午10.40.43.png"><br>使用<!-- more -->标签来隐藏其下面的内容~</p>
 <p>2 下图效果的标签如何添加？<br><img src="http://upload-images.jianshu.io/upload_images/1396824-51c3439305130a1b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="屏幕快照 2016-08-03 下午10.43.35.png"></p>
-<p>打开你的编辑器，在文章头部这块的tags下面用 -标签这种形式添加，就会生成图片中的标签了，相同的标签文章将会被归类到一起，很方便查看<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 宏定义的黑魔法</span><br><span class="line">date: 2016-07-22 15:08:32</span><br><span class="line">categories:</span><br><span class="line">tags:</span><br><span class="line">     - 黑魔法</span><br><span class="line">     - 奇淫技巧</span><br><span class="line">---</span><br></pre></td></tr></table></figure></p>
+<p>打开你的编辑器，在文章头部这块的tags下面用 -标签这种形式添加，就会生成图片中的标签了，相同的标签文章将会被归类到一起，很方便查看</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 宏定义的黑魔法</span><br><span class="line">date: 2016-07-22 15:08:32</span><br><span class="line">categories:</span><br><span class="line">tags:</span><br><span class="line">     - 黑魔法</span><br><span class="line">     - 奇淫技巧</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>3 每页显示多少篇文章，分页效果如何设置？<br><img src="http://upload-images.jianshu.io/upload_images/1396824-ebaeb6cc28dee5ab.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="屏幕快照 2016-08-05 上午11.52.57.png"></p>
+<p>类似于上图，每一页显示几篇文章，我们打开主目录下的_config.yml,找到下端代码的位置，修改per _page后面的参数就行，例如我的就是每页五篇文章</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">## Set per_page to 0 to disable pagination</span><br><span class="line">per_page: 5</span><br><span class="line">pagination_dir: page</span><br></pre></td></tr></table></figure>
 <p>暂时我遇到的问题就这么几个，总体来说yilia是一款优秀的主题，友情链接，多说评论，界面风格，是我觉得很棒的一个主题，大家也可以试下，遇到问题一起讨论，作者关于该主题配置的一篇介绍</p>
 <ul>
 <li><a href="http://litten.github.io/2014/08/31/hexo-theme-yilia/" target="_blank" rel="external">Hexo主题Yilia
