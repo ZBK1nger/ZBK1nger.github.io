@@ -37,7 +37,7 @@ NEHotspotHelper
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1396824-28a90021c1aef73a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1396824-e5c726f2c61731b0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1396824-a5590c1950e2c935.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-06-28T06:06:37.000Z">
+<meta property="og:updated_time" content="2017-06-28T06:09:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS之Wifi开发相关问题">
 <meta name="twitter:description" content="好久没有写博客了，最近在做iOSWIFi开发的部分，这里我们主要用到的API以及FrameWork有以下:
@@ -268,9 +268,10 @@ NEHotspotHelper
 <ul>
 <li>付费的开发者账号</li>
 <li>公司的WebSite</li>
-<li>明确你的Wifi开发需求</li>
+<li><p>明确你的Wifi开发需求</p>
+<a id="more"></a>
+</li>
 </ul>
- <a id="more"></a>
 <p>申请步骤：</p>
 <p>1 申请网址 <a href="https://developer.apple.com//contact/network-extension/" target="_blank" rel="external">https://developer.apple.com//contact/network-extension/</a> 填写申请的相关资料<br><img src="http://upload-images.jianshu.io/upload_images/1396824-b7d5c240a320abdb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>根据你项目中的具体情况，在相对应的地方打钩 </p>
 <p><img src="http://upload-images.jianshu.io/upload_images/1396824-fd14fbb455c7d5bd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
@@ -290,8 +291,7 @@ NEHotspotHelper
 </a></li>
 <li><a href="https://developer.apple.com/documentation/networkextension/nehotspothelper" target="_blank" rel="external">NEHotspotHelpers使用- 官网文档</a></li>
 </ul>
-<p>#####一些相关属性</p>
-<ul>
+<h5 id="一些相关属性"><a href="#一些相关属性" class="headerlink" title="一些相关属性"></a>一些相关属性</h5><ul>
 <li>SSID：Wifi 名称</li>
 <li>BSSID：站点的 MAC 地址</li>
 <li>signalStrength： Wifi信号强度，该值在0.0-1.0之间</li>
@@ -307,8 +307,7 @@ NEHotspotHelper
 <li>获取wifi列表，并给系统设置页面Wifi设置子标题 可以获得wifi名称，信号强度，mac地址等等</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">+(void)getWifiList&#123;</span><br><span class="line"></span><br><span class="line">    NSMutableDictionary* options = [[NSMutableDictionary alloc] init];</span><br><span class="line">    [options setObject:@&quot;🔑Wifi子标题🔑&quot; forKey:kNEHotspotHelperOptionDisplayName];</span><br><span class="line"></span><br><span class="line">    dispatch_queue_t queue = dispatch_queue_create(&quot;com.pronetwayXY&quot;, NULL);</span><br><span class="line">    BOOL returnType = [NEHotspotHelper registerWithOptions:options queue:queue handler: ^(NEHotspotHelperCommand * cmd) &#123;</span><br><span class="line">        NEHotspotNetwork* network;</span><br><span class="line">        NSLog(@&quot;COMMAND TYPE:   %ld&quot;, (long)cmd.commandType);</span><br><span class="line">        [cmd createResponse:kNEHotspotHelperResultAuthenticationRequired];</span><br><span class="line">        if (cmd.commandType == kNEHotspotHelperCommandTypeEvaluate || cmd.commandType ==kNEHotspotHelperCommandTypeFilterScanList) &#123;</span><br><span class="line">            NSLog(@&quot;WIFILIST:   %@&quot;, cmd.networkList);</span><br><span class="line">            for (network  in cmd.networkList) &#123;</span><br><span class="line">                // NSLog(@&quot;COMMAND TYPE After:   %ld&quot;, (long)cmd.commandType);</span><br><span class="line">                if ([network.SSID isEqualToString:@&quot;ssid&quot;]|| [network.SSID isEqualToString:@&quot;proict_test&quot;]) &#123;</span><br><span class="line"></span><br><span class="line">                    double signalStrength = network.signalStrength;</span><br><span class="line">                    NSLog(@&quot;Signal Strength: %f&quot;, signalStrength);</span><br><span class="line">                    [network setConfidence:kNEHotspotHelperConfidenceHigh];</span><br><span class="line">                    [network setPassword:@&quot;password&quot;];</span><br><span class="line"></span><br><span class="line">                    NEHotspotHelperResponse *response = [cmd createResponse:kNEHotspotHelperResultSuccess];</span><br><span class="line">                    NSLog(@&quot;Response CMD %@&quot;, response);</span><br><span class="line"></span><br><span class="line">                    [response setNetworkList:@[network]];</span><br><span class="line">                    [response setNetwork:network];</span><br><span class="line">                    [response deliver];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;];</span><br><span class="line">    NSLog(@&quot;result :%d&quot;, returnType);</span><br><span class="line">    NSArray *array = [NEHotspotHelper supportedNetworkInterfaces];</span><br><span class="line">    NSLog(@&quot;wifiArray:%@&quot;, array);</span><br><span class="line">    NEHotspotNetwork *connectedNetwork = [array lastObject];</span><br><span class="line">    NSLog(@&quot;supported Network Interface: %@&quot;, connectedNetwork);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>###三 思考</p>
-<ul>
+<h3 id="三-思考"><a href="#三-思考" class="headerlink" title="三 思考"></a>三 思考</h3><ul>
 <li>1  必须进入到系统WIFI设置页面才可以获取到WIFI列表（包括强度 WIFI名称）参考WIFI万能助手 可能都是通过LBS一些方法告诉你附近可能存在的WIFI，然后通过点击推荐的WIFI 进入下一步</li>
 </ul>
 <p><img src="http://upload-images.jianshu.io/upload_images/1396824-28a90021c1aef73a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
@@ -318,8 +317,7 @@ NEHotspotHelper
 <ul>
 <li>3 不能主动通过代码的方式断开WIFI 比如 有一个按钮叫做断开WIFI 这样是不允许的 只能通过用户手动关闭WIFI或者WIFI本身无法连接网络只能通过判断当前网络状态的方式进行连接</li>
 </ul>
-<p>###四 总结</p>
-<p>iOS wifi开发相关资料较少，Apple对这方面的审核也较为严格 希望这篇文章可以帮助到正在做wifi开发相关的小伙伴们，加油！</p>
+<h3 id="四-总结"><a href="#四-总结" class="headerlink" title="四 总结"></a>四 总结</h3><p>iOS wifi开发相关资料较少，Apple对这方面的审核也较为严格 希望这篇文章可以帮助到正在做wifi开发相关的小伙伴们，加油！</p>
 
       
     </div>
