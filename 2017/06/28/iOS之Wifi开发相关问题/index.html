@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>iOS之Wifi开发相关问题 | Devin👀</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="好久没有写博客了，最近在做iOSWIFi开发的部分，这里我们主要用到的API以及FrameWork有以下:
+
+NetworkExtension.framework
+NEHotspotHelper
+
+一 申请准备条件:
+
+付费的开发者账号
+公司的WebSite
+明确你的Wifi开发需求">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS之Wifi开发相关问题">
+<meta property="og:url" content="https://github.com/ZBK1nger/2017/06/28/iOS之Wifi开发相关问题/index.html">
+<meta property="og:site_name" content="Devin👀">
+<meta property="og:description" content="好久没有写博客了，最近在做iOSWIFi开发的部分，这里我们主要用到的API以及FrameWork有以下:
+
+NetworkExtension.framework
+NEHotspotHelper
+
+一 申请准备条件:
+
+付费的开发者账号
+公司的WebSite
+明确你的Wifi开发需求">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1396824-b7d5c240a320abdb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1396824-fd14fbb455c7d5bd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1396824-280482c2dbdc5d90.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1396824-b4d6824d7c94818d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1396824-28a90021c1aef73a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1396824-e5c726f2c61731b0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1396824-a5590c1950e2c935.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-06-28T05:58:51.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iOS之Wifi开发相关问题">
+<meta name="twitter:description" content="好久没有写博客了，最近在做iOSWIFi开发的部分，这里我们主要用到的API以及FrameWork有以下:
+
+NetworkExtension.framework
+NEHotspotHelper
+
+一 申请准备条件:
+
+付费的开发者账号
+公司的WebSite
+明确你的Wifi开发需求">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1396824-b7d5c240a320abdb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+  
+    <link rel="alternative" href="/atom.xml" title="Devin👀" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="https://avatars1.githubusercontent.com/u/16093107?v=3&amp;s=460" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Devin</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">Once reality now it’s just a memory.</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/tags/随笔">随笔</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/ZBK1nger" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/u/5374140891/home?wvr=5&lf=reg" title="weibo">weibo</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/Swift/" style="font-size: 10px;">Swift</a> <a href="/tags/iOS/" style="font-size: 20px;">iOS</a> <a href="/tags/ios/" style="font-size: 10px;">ios</a> <a href="/tags/感悟/" style="font-size: 10px;">感悟</a> <a href="/tags/能工巧匠/" style="font-size: 20px;">能工巧匠</a> <a href="/tags/适配/" style="font-size: 10px;">适配</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a> <a href="/tags/黑魔法/" style="font-size: 15px;">黑魔法</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.jianshu.com/users/b32afbecfe91/latest_articles">冷丶子栀简书</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">Once reality now it’s just a memory.----曾经的现实，现在已是回忆。</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Devin</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="https://avatars1.githubusercontent.com/u/16093107?v=3&amp;s=460" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Devin</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">Once reality now it’s just a memory.</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/tags/随笔">随笔</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/ZBK1nger" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/u/5374140891/home?wvr=5&lf=reg" title="weibo">weibo</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-iOS之Wifi开发相关问题" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/06/28/iOS之Wifi开发相关问题/" class="article-date">
+  	<time datetime="2017-06-28T05:54:04.000Z" itemprop="datePublished">2017-06-28</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      iOS之Wifi开发相关问题
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>好久没有写博客了，最近在做iOSWIFi开发的部分，这里我们主要用到的API以及FrameWork有以下:</p>
+<ul>
+<li>NetworkExtension.framework</li>
+<li>NEHotspotHelper</li>
+</ul>
+<h3 id="一-申请"><a href="#一-申请" class="headerlink" title="一 申请"></a>一 申请</h3><p>准备条件:</p>
+<ul>
+<li>付费的开发者账号</li>
+<li>公司的WebSite</li>
+<li><p>明确你的Wifi开发需求</p>
+<a id="more"></a>
+</li>
+</ul>
+<p>申请步骤：</p>
+<ul>
+<li>1 申请网址 <a href="https://developer.apple.com//contact/network-extension/" target="_blank" rel="external">https://developer.apple.com//contact/network-extension/</a> 填写申请的相关资料<br><img src="http://upload-images.jianshu.io/upload_images/1396824-b7d5c240a320abdb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>根据你项目中的具体情况，在相对应的地方打钩 </li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/1396824-fd14fbb455c7d5bd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<ul>
+<li>上述表填写完毕之后，发送之后，没多久会受到一封邮件，邮件的大致内容为</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/1396824-280482c2dbdc5d90.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>大致意思就是从16年11月10日开始 可以在开发者账户的account页面创建APPID的时候添加网络扩展</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1396824-b4d6824d7c94818d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<ul>
+<li>ps NetWork Extensions能做的有限，可以获取WiFi名字和mac地址，但是注册改变Wifi设置页面子title 设置密码 并可以进行连接 这仍需我们申请并获取HotsPotHelperApi的使用权限 过两周或者更久可以收到Apple回复的是否通过的Email，如果失败了不要气馁，据很多小伙伴反应，比追姑娘都要麻烦😂</li>
+</ul>
+<h3 id="二-使用"><a href="#二-使用" class="headerlink" title="二 使用"></a>二 使用</h3><p>在这里我就不多加赘述，WIFi开发的相关资料虽然很少，但是申请成功后，如何在项目中配置，这部分的文章网上有很多，具体配置给你们推荐两篇文章好吧</p>
+<ul>
+<li><a href="https://lpd-ios.github.io/2017/03/09/NEHotspotHelper/" target="_blank" rel="external">iOS 无法获取 WiFi 列表？一定是因为你不知道这个框架</a></li>
+<li><a href="http://www.jianshu.com/p/5072a8485ceb" target="_blank" rel="external">iOS 获取系统wifi列表,wifi信号强度,并给wifi设置密码,标签(副标题)
+</a></li>
+<li><a href="https://developer.apple.com/documentation/networkextension/nehotspothelper" target="_blank" rel="external">NEHotspotHelpers使用- 官网文档</a></li>
+</ul>
+<p>#####一些相关属性</p>
+<ul>
+<li>SSID：Wifi 名称</li>
+<li>BSSID：站点的 MAC 地址</li>
+<li>signalStrength： Wifi信号强度，该值在0.0-1.0之间</li>
+<li>secure：网络是否安全 (不需要密码的 Wifi，该值为 false)</li>
+<li>autoJoined： 设备是否自动连接该 Wifi，目前测试自动连接以前连过的 Wifi 的也为 false </li>
+<li>justJoined：网络是否刚刚加入</li>
+<li>chosenHelper：HotspotHelper是否为网络的所选助手</li>
+</ul>
+<p>部分使用代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">Register a Hotspot Helper</span><br><span class="line"></span><br><span class="line">+ (BOOL)registerWithOptions:(NSDictionary*)options queue:(dispatch_queue_t)queue handler:(NEHotspotHelperHandler)handler</span><br><span class="line"></span><br><span class="line">@param options </span><br><span class="line"></span><br><span class="line"> kNEHotspotHelperOptionDisplayName ：WIFI的注释tag字符串// 此处设置的内容会在WiFi列表中每个WiFi下边展示出来 </span><br><span class="line"></span><br><span class="line">@param queue dispatch_queue_t 用来调用handle的block </span><br><span class="line"></span><br><span class="line">@param handler NEHotspotHelperHandler block 用于执行处理 helper commands.</span><br><span class="line"></span><br><span class="line"> @return 注册成功YES, 否则NO. </span><br><span class="line"></span><br><span class="line">@discussion 一旦这个API调用成功，应用程序有资格在后台启动，并参与各种热点相关的功能。 当应用程序启动此方法应该调用一次。再次调用它不会产生影响，并返回NO。</span><br><span class="line"></span><br><span class="line">这个方法是主要的.</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">+ (BOOL)logoff:(NEHotspotNetwork *)network</span><br><span class="line"></span><br><span class="line">@param network 对应当前关联的WiFi网络NEHotspotNetwork</span><br><span class="line"></span><br><span class="line"> @return 注销命令已成功进入队列YES, 否则NO. </span><br><span class="line"></span><br><span class="line">@discussion 调用此方法使kNEHotspotHelperCommandTypeLogoff型的NEHotspotHelperCommand向应用程序发出的“handler”模块 网络参数必须符合当前关联的WiFi网络，即它必须来自对NEHotspotHelperCommand网络属性或方法supportedInterfaces</span><br><span class="line"></span><br><span class="line">+ (NSArray *)supportedNetworkInterfaces</span><br><span class="line"></span><br><span class="line">@return 如果没有网络接口被管理，返回nil。否则，返回NEHotspotNetwork对象数组。 </span><br><span class="line"></span><br><span class="line">@discussion 每个网络接口由NEHotspotNetwork对象表示。当前返回的数组包含一个NEHotspotNetwork对象代表Wi-Fi接口。</span><br><span class="line"></span><br><span class="line"> 这种方法的主要目的是当没有得到一个命令来处理它时，让一个热点助手偶尔提供在UI里其准确的状态。 此方法加上NEHotspotNetwork的isChosenHelper方法允许应用程序知道它是否是当前处理的网络。</span><br></pre></td></tr></table></figure>
+<ul>
+<li>获取wifi列表，并给系统设置页面Wifi设置子标题 可以获得wifi名称，信号强度，mac地址等等</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">+(void)getWifiList&#123;</span><br><span class="line"></span><br><span class="line">    NSMutableDictionary* options = [[NSMutableDictionary alloc] init];</span><br><span class="line">    [options setObject:@&quot;🔑Wifi子标题🔑&quot; forKey:kNEHotspotHelperOptionDisplayName];</span><br><span class="line"></span><br><span class="line">    dispatch_queue_t queue = dispatch_queue_create(&quot;com.pronetwayXY&quot;, NULL);</span><br><span class="line">    BOOL returnType = [NEHotspotHelper registerWithOptions:options queue:queue handler: ^(NEHotspotHelperCommand * cmd) &#123;</span><br><span class="line">        NEHotspotNetwork* network;</span><br><span class="line">        NSLog(@&quot;COMMAND TYPE:   %ld&quot;, (long)cmd.commandType);</span><br><span class="line">        [cmd createResponse:kNEHotspotHelperResultAuthenticationRequired];</span><br><span class="line">        if (cmd.commandType == kNEHotspotHelperCommandTypeEvaluate || cmd.commandType ==kNEHotspotHelperCommandTypeFilterScanList) &#123;</span><br><span class="line">            NSLog(@&quot;WIFILIST:   %@&quot;, cmd.networkList);</span><br><span class="line">            for (network  in cmd.networkList) &#123;</span><br><span class="line">                // NSLog(@&quot;COMMAND TYPE After:   %ld&quot;, (long)cmd.commandType);</span><br><span class="line">                if ([network.SSID isEqualToString:@&quot;ssid&quot;]|| [network.SSID isEqualToString:@&quot;proict_test&quot;]) &#123;</span><br><span class="line"></span><br><span class="line">                    double signalStrength = network.signalStrength;</span><br><span class="line">                    NSLog(@&quot;Signal Strength: %f&quot;, signalStrength);</span><br><span class="line">                    [network setConfidence:kNEHotspotHelperConfidenceHigh];</span><br><span class="line">                    [network setPassword:@&quot;password&quot;];</span><br><span class="line"></span><br><span class="line">                    NEHotspotHelperResponse *response = [cmd createResponse:kNEHotspotHelperResultSuccess];</span><br><span class="line">                    NSLog(@&quot;Response CMD %@&quot;, response);</span><br><span class="line"></span><br><span class="line">                    [response setNetworkList:@[network]];</span><br><span class="line">                    [response setNetwork:network];</span><br><span class="line">                    [response deliver];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;];</span><br><span class="line">    NSLog(@&quot;result :%d&quot;, returnType);</span><br><span class="line">    NSArray *array = [NEHotspotHelper supportedNetworkInterfaces];</span><br><span class="line">    NSLog(@&quot;wifiArray:%@&quot;, array);</span><br><span class="line">    NEHotspotNetwork *connectedNetwork = [array lastObject];</span><br><span class="line">    NSLog(@&quot;supported Network Interface: %@&quot;, connectedNetwork);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>###三 思考</p>
+<ul>
+<li>1  必须进入到系统WIFI设置页面才可以获取到WIFI列表（包括强度 WIFI名称）参考WIFI万能助手 可能都是通过LBS一些方法告诉你附近可能存在的WIFI，然后通过点击推荐的WIFI 进入下一步</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/1396824-28a90021c1aef73a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>2 点击上方任意一个可能存在的WIFI，因为Apple政策原因 无法再APP内直接连接WIFI！！！ 所以万能钥匙的策略是<br>如下图，提供你个连接教程，将可以连接的WIFI名称进行更改，在下方加上提示文字 比如 🔑万能WIFI - 点击一键上网🔑<br>￼<br><img src="http://upload-images.jianshu.io/upload_images/1396824-e5c726f2c61731b0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>通过这样的方式进行连接</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1396824-a5590c1950e2c935.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>这里万能钥匙的做法是帮助用户跳到wifi系统设置页面，市面上还有很多需要用户自己手动进入WIFI设置页面的App，比如360免费wifi，这样虽然牺牲了一部分用户体验，但是在审核方面可以通过率大大增加，还是比较值得倡导的</p>
+<ul>
+<li>3 不能主动通过代码的方式断开WIFI 比如 有一个按钮叫做断开WIFI 这样是不允许的 只能通过用户手动关闭WIFI或者WIFI本身无法连接网络只能通过判断当前网络状态的方式进行连接</li>
+</ul>
+<p>###四 总结<br>iOS wifi开发相关资料较少，Apple对这方面的审核也较为严格 希望这篇文章可以帮助到正在做wifi开发相关的小伙伴们，加油！</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/08/03/GithubPages-Hexo博客主题Yilia/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">GithubPages+Hexo博客主题Yilia</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="iOS之Wifi开发相关问题" data-title="iOS之Wifi开发相关问题" data-url="https://github.com/ZBK1nger/2017/06/28/iOS之Wifi开发相关问题/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2017 Devin
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
